@@ -1,7 +1,9 @@
 var express      = require('express');
 var path         = require('path');
+var fs           = require('fs');
 var bodyParser   = require('body-parser');
 var nodemailer   = require('nodemailer');
+var mongoose     = require('mongoose');
 
 var app          = express();
 var transporter  = nodemailer.createTransport();
@@ -14,6 +16,26 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
+// Models
+fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
+  if (~file.indexOf('.js')) require(__dirname + '/app/models/' + file);
+});
+
+// Database
+mongoose.connect('mongodb://localhost:27017/devis');
+
+mongoose.connection.on("error", function(){
+  console.log("Erreur de connection à la base de données.")
+});
+mongoose.connection.on("connected", function(){
+  console.log("Connection en cours à la base de données.")
+});
+mongoose.connection.on("open", function(){
+  console.log("Connection réussie à la base de données.")
+});
+
+console.log(mongoose.connection.readyState);
 
 
 // Routing
@@ -55,3 +77,4 @@ app.post('/nouveau-projet', function(req,res){
 
 // Server
 app.listen(port);
+console.log("Serveur lancé à l'adresse http://local.dev:" + port);
