@@ -1,0 +1,14 @@
+{
+  "name": "pierre-guerin",
+  "version": "1.0.0",
+  "description": "Mon application web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pierre GUERIN <guerin.pierre26@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
