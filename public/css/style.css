@@ -1,0 +1,607 @@
+@font-face {
+  font-family: 'Calendas_Regular';
+  src: url('../fonts/calendas_plus.eot');
+  src: local('☺'), 
+       url('../fonts/calendas_plus.woff') format('woff'), 
+       url('../fonts/calendas_plus.ttf') format('truetype'), 
+       url('../fonts/calendas_plus.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Calendas_Bold';
+  src: url('../fonts/calendas_plus_bold.eot');
+  src: local('☺'), 
+       url('../fonts/calendas_plus_bold.woff') format('woff'), 
+       url('../fonts/calendas_plus_bold.ttf') format('truetype'), 
+       url('../fonts/calendas_plus_bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Calendas_Italic';
+  src: url('../fonts/calendas_plus_italic.eot');
+  src: local('☺'), 
+       url('../fonts/calendas_plus_italic.woff') format('woff'), 
+       url('../fonts/calendas_plus_italic.ttf') format('truetype'), 
+       url('../fonts/calendas_plus_italic.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+hr {
+  display: block;
+  float: left;
+  width: 75%;
+  margin: 3% 12.5% 0% 12.5%;
+}
+i {
+  display: flex !important;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+#container {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.page-content {
+  overflow: hidden;
+}
+.black-window {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.close-bottom-left {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -47%;
+  width: 125%;
+  height: 125%;
+  background-color: #000;
+  opacity: 1;
+  z-index: 1;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.close-top-right {
+  display: block;
+  position: absolute;
+  top: -25%;
+  right: -48%;
+  width: 125%;
+  height: 125%;
+  background-color: #000;
+  opacity: 1;
+  z-index: 1;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.logo-pg {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  overflow: hidden;
+  opacity: 1;
+  z-index: 2;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.logo-img {
+  height: 100%;
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.header, .profil, .portfolio, .contact, .devis {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 100%;
+  color: #fff;
+}
+.background-header {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/background-header.jpg) 100% 100%;
+  opacity: 1;
+}
+.background-filtre {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.66;
+}
+.pg-name, .pg-job, .rotate_job, .pg-desc {
+  display: block;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.pg-name {
+  top: 15%;
+  font-size: 3em;
+  font-family: 'Calendas_Italic';
+}
+.pg-job {
+  top: 27.5%;
+  font-size: 4em;
+  font-family: 'Calendas_Bold';
+}
+.rotate_job {
+  top: 37.5%;
+  font-size: 2em;
+  font-family: 'Calendas_Regular';
+  color: rgba(255,255,255,0.75);
+}
+.pg-desc {
+  top: 55%;
+  font-size: 1.5em;
+  font-family: 'Calendas_Regular';
+  color: rgba(255,255,255,1);
+}
+.btn{
+  display: block;
+  position: absolute;
+  left: 50%;
+  padding: 20px 70px;
+  background: none;
+  font-family: 'Calendas_Regular';
+  font-size: 1.125em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: -1;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.btn:hover::after {
+  height: 400%;
+  opacity: 1;
+}
+.btn-portfolio {
+  top: 85%;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-portfolio::after {
+  background: #fff;
+}
+.btn-portfolio:hover, .btn-portfolio:active {
+  color: #000;
+}
+.btn-cv, .btn-contact {
+  display: inline-block;
+  position: relative;
+  margin-top: 5%;
+  border: 2px solid #000;
+  color: #000;
+}
+.btn-cv::after, .btn-contact::after {
+  background: #000;
+}
+.btn-cv:hover, .btn-contact:hover, .btn-cv:active, .btn-contact:active {
+  color: #fff;
+}
+.btn-form-contact {
+  display: inline-block;
+  position: relative;
+  margin-top: 5%;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-form-contact::after {
+  background: #fff;
+}
+.btn-form-contact:hover, .btn-form-contact:active {
+  color: #000;
+}
+.profil, .portfolio, .contact {
+  background-color: #fff;
+  color: #000;
+}
+.section-sepa {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.section-sepa img {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 7.5%;
+  padding: 0 2.5%;
+  background-color: #fff;
+  transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+}
+.section-title {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-top: 7.5%;
+  font-family: 'Calendas_Italic';
+  font-size: 2em;
+  text-align: center;
+}
+.profil-image {
+  display: block;
+  float: left;
+  width: 15%;
+  margin: 2.5% 42.5%;
+  overflow: hidden;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.profil-image img {
+  width: 100%;
+  filter: brightness(110%);
+  -o-filter: brightness(110%);
+  -ms-filter: brightness(110%);
+  -moz-filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.profil-text {
+  display: block;
+  float: left;
+  width: 100%;
+}
+.profil-text p {
+  display: block;
+  float: left;
+  width: 50%;
+  margin: 0.5% 25%;
+  font-family: 'Calendas_Regular';
+  font-size: 1.25em;
+  text-align: justify;
+  color: rgba(0,0,0,0.9);
+}
+
+.grid-sizer, .grid-item { width: 20%; }
+.grid-item--width2 { width: 40%; }
+
+.contact-me {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 5% 0;
+}
+.contact-line, .form-line {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.contact-left, .form-left {
+  display: block;
+  position: relative;
+  float: left;
+  width: 30%;
+  margin: 0 5% 0 15%;
+}
+.contact-right, .form-right {
+  display: block;
+  position: relative;
+  float: left;
+  width: 30%;
+  margin: 0 15% 0 5%;
+}
+.contact-icon {
+  margin-bottom: 2.5%;
+  text-align: center;
+}
+i.fa-question, i.fa-lightbulb-o {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  background-color: #000;
+}
+.contact-left p, .contact-right p {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 2.5% 0 10% 0;
+  font-family: 'Calendas_Regular';
+  font-size: 1.25em;
+}
+footer {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 33%;
+  background-color: #000;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Calendas_Italic';
+}
+.copyright, .reseaux-sociaux {
+  display: flex;
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.copyright {
+  font-size: 1.125em;
+}
+.reseaux-sociaux a {
+  margin: 0 1%;
+}
+i.fa-facebook, i.fa-twitter, i.fa-github, i.fa-linkedin, i.fa-pinterest-p {
+  float: left;
+  width: 66px;
+  height: 66px;
+  margin: 0 1%;
+  color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.reseaux-sociaux a:hover i {
+  color: rgba(255,255,255,1);
+  border: 2px solid rgba(255,255,255,1);
+}
+
+
+/* ============ */
+/* Page Contact */
+/* ============ */
+
+.titre {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  font-family: 'Calendas_Italic';
+  font-weight: 400;
+}
+.page-titre {
+  margin: 5% 0 0 0;
+  font-size: 3em;
+  text-align: center;
+}
+.form-titre {
+  margin: 2.5% 0 1% 0;
+  font-size: 1.5em;
+  text-align: left;
+}
+.contact-form {
+  display: block;
+  position: relative;
+  float: left;
+  width: 75%;
+  margin: 2.5% 12.5%;
+}
+.form-group {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 2.5% 0;
+}
+.group-small-left {
+  width: 45%;
+  margin: 2.5% 5% 2.5% 0;
+}
+.group-small-right {
+  width: 45%;
+  margin: 2.5% 0 2.5% 5%;
+}
+label {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 1% 0;
+  padding-left: 0.5%;
+  font-family: 'Calendas_Bold';
+  font-size: 1.5em;
+  line-height: 1em;
+  transform: translateY(-222%);
+  -o-transform: translateY(-222%);
+  -ms-transform: translateY(-222%);
+  -moz-transform: translateY(-222%);
+  -webkit-transform: translateY(-222%);
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.group-small-left label, .group-small-right label{
+  line-height: 0.8em;
+}
+input[type="text"] + label, input[type="email"] + label {
+  top: 100%;
+}
+input[type="date"] + label {
+  font-size: 1em;
+}
+textarea + label {
+  top: 25%;
+}
+input[type="text"], input[type="date"], input[type="email"], textarea {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-left: 0.5%;
+  line-height: 1.5em;
+  background: none;
+  border: none;
+  border-top: 2px solid rgba(255,255,255,0.5);
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.0625);
+  font-family: 'Calendas_Regular';
+  font-size: 2em;
+  color: #fff;
+  z-index: 1;
+}
+input[type="date"] {
+  font-family: Arial;
+}
+textarea {
+  height: 200px;
+}
+input[type="text"]:focus, input[type="date"]:focus, input[type="email"]:focus, textarea:focus {
+  outline: none;
+}
+textarea:focus {
+  height: 12.5rem;
+}
+input[type="text"]:focus + label, input[type="email"]:focus + label, textarea:focus + label {
+  font-size: 1em;
+  top: 0;
+}
+.filled + label {
+  font-size: 1em;
+  top: 0 !important;
+}
+.form-line {
+  margin-top: 5rem;
+}
+.form-element {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0 2.5%;
+}
+.form-element:first-child {
+  margin-left: 0;
+}
+.form-element label {
+  position: relative;
+  float: left;
+  width: auto;
+  transform: none;
+}
+input[type="radio"] {
+  display: flex;
+  float: left;
+  margin: 0;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+}
+input[type="date"]:hover::-webkit-calendar-picker-indicator{
+  background: none;
+  cursor: pointer;
+}
+input[type="date"]::-webkit-inner-spin-button {
+    /* Your CSS here */
+}
+@media screen and (max-width : 480px) {
+
+}
+
+@media only screen and (min-width : 480px) and (max-width : 1024px) {
+
+}
+
+@media only screen and (min-width : 1024px) and (max-width : 1600px) {
+
+}
+
+@media only screen and (min-width : 1600px) {
+
+}
