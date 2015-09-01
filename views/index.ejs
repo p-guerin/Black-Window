@@ -10,12 +10,132 @@
       <meta name="language" content="fr">
     
     <title>Pierre GUERIN</title>
-
+    
+    <link rel='stylesheet' href='css/perfect-scrollbar.css' />
+    <link rel='stylesheet' href='css/font-awesome.min.css' />
     <link rel="stylesheet" href="css/style.css"/>
 
   </head>
   
   <body>
-    <h1>Pierre</h1>
+    <div id="container">
+      <section class="black-window">
+        <div class="close-bottom-left"></div>
+        <div class="close-top-right"></div>
+        <div class="logo-pg">
+          <img class="logo-img" alt="logo" src="images/logo-pgw.svg" />
+        </div>
+      </section>
+      
+      <section class="header">
+        <div class="background-header"></div>
+        <div class="background-filtre"></div>
+        <p class="pg-name">Pierre Guérin</p>
+        <p class="pg-job">DEVELOPPEUR</p>
+        <p class="rotate_job">HTML/CSS,Javascript,Jquery,SQL,Ruby</p>
+        <p class="pg-desc">
+          Je suis développeur passionné par la création d'applications Web et<br>
+          mobiles. Créatif, dynamique et perfectionniste, mon objectif est<br>
+          de concevoir votre application en prenant soin de respecter<br>
+          l’expérience utilisateur et l’ergonomie d'utilisation. 
+        </p>
+        <button class="btn btn-portfolio" href="#portfolio">Mes Projets</button>
+      </section>
+
+      <section class="profil">
+        <div class="section-title">
+          A propos
+          <div class="section-sepa">
+            <hr>
+            <img src="images/logo-pgb.svg" alt="Profil">  
+          </div>
+        </div>
+        <div class="profil-image">
+          <img src="images/pierre-guerin.jpg" alt="Pierre GUERIN">
+        </div>
+        <div class="profil-text">
+          <p>
+            Développeur, dans la région Rhône-Alpes (Valence), je suis passionné par les nouvelles technologies. J’aime concevoir des interfaces et le rapport à la fonctionnalité. D'abord autodidacte, j'ai fait la formation Simplon.VE du printemps à l'automne 2015 afin de compléter et aussi diversifier mes compétences.
+          </p>
+          <p>
+            Ma polyvalence, ma curiosité et mon irrépressible envie d'améliorer mes compétences me permettent de vous proposer une solution adaptée à vos besoins.
+          </p>
+          <a class="btn btn-cv" href="/cv-pierre-guerin.pdf">Voir mon CV</a>
+        </div>
+      </section>
+      
+      <section id="portfolio" class="portfolio">
+        <div class="section-title">
+          Portfolio
+          <div class="section-sepa">
+            <hr>
+            <img src="images/logo-pgb.svg" alt="Profil">  
+          </div>
+        </div>
+        <div class="grid">
+          <div class="grid-item"></div>
+          <div class="grid-item grid-item--width2"></div>
+          <div class="grid-item grid-item--height2"></div>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="section-title">
+          Contact
+          <div class="section-sepa">
+            <hr>
+            <img src="images/logo-pgb.svg" alt="Profil">  
+          </div>
+        </div>
+        <div class="contact-me">
+          <div class="contact-line">
+            <div class="contact-left contact-icon"> 
+              <i class="fa fa-2x fa-question"></i>
+            </div>
+            <div class="contact-right contact-icon">
+              <i class="fa fa-2x fa-lightbulb-o"></i>
+            </div>
+          </div>
+          <div class="contact-line">
+            <div class="contact-left"> 
+              <p><b>Vous avez une question ?</b> Vous pouvez me contacter sur mon mail pour avoir une réponse rapide.</p>
+            </div>
+            <div class="contact-right">
+              <p><b>Vous avez un projet ?</b> Vous pouvez directement le proposer ici pour discuter ensemble des solutions disponibles pour sa réalisation.</p>
+            </div>
+          </div>
+          <div class="contact-line">
+            <div class="contact-left"> 
+              <a href="/contact" class="btn btn-contact">
+                 Une question ?
+              </a>
+            </div>
+            <div class="contact-right">
+              <a href="/nouveau-projet" class="btn btn-contact">
+                Un projet ?
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="copyright">© 2015 Pierre Guérin - Webdesigner & Webdéveloppeur à Valence.</div>
+        <div class="reseaux-sociaux">
+          <a href="/"><i class="fa fa-2x fa-facebook"></i></a>
+          <a href="/"><i class="fa fa-2x fa-twitter"></i></a>
+          <a href="/"><i class="fa fa-2x fa-github"></i></a>
+          <a href="/"><i class="fa fa-2x fa-linkedin"></i></a>
+          <a href="/"><i class="fa fa-2x fa-pinterest-p"></i></a>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/loadeffect.js"></script>
+    <script type="text/javascript" src="js/textrotator.js"></script>
+    <script type="text/javascript" src="js/navscroll.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="js/perfectscrollbar.js"></script>
   </body>
 </html>
