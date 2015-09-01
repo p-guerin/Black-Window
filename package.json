@@ -9,6 +9,7 @@
   "author": "Pierre GUERIN <guerin.pierre26@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.13.3",
     "ejs": "^2.3.3",
     "express": "^4.13.3"
   }
