@@ -443,9 +443,9 @@ i.fa-facebook, i.fa-twitter, i.fa-github, i.fa-linkedin, i.fa-pinterest-p {
 }
 
 
-/* ============ */
-/* Page Contact */
-/* ============ */
+/* ============================= */
+/* Page Contact + Nouveau projet */
+/* ============================= */
 
 .titre {
   display: block;
@@ -587,9 +587,30 @@ input[type="date"]:hover::-webkit-calendar-picker-indicator{
   background: none;
   cursor: pointer;
 }
-input[type="date"]::-webkit-inner-spin-button {
-    /* Your CSS here */
+
+
+/* ============================= */
+/*           Page Admin          */
+/* ============================= */
+
+table {
+  display: block;
+  float: left;
+  width: 100%;
+  border-collapse: collapse;
 }
+th, td {
+  border: 1px solid #000;
+}
+td {
+  padding-left: 2.5px;
+}
+
+
+/* ============================= */
+/*           Responsive          */
+/* ============================= */
+
 @media screen and (max-width : 480px) {
 
 }
