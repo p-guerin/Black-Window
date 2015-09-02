@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
   if (~file.indexOf('.js')) require(__dirname + '/app/models/' + file);
 });
+var Devis = mongoose.model('Devis')
 
 
 // Database
@@ -62,38 +63,38 @@ app.get('/nouveau-projet', function(req,res){
 app.post('/nouveau-projet', function(req,res){
   new Devis({
     infos_perso: { 
-      nom                  : req.body.nom_enfant,
-      prenom               : req.body.prenom_enfant,
-      email                : req.body.age
+      nom                  : req.body.nom,
+      prenom               : req.body.prenom,
+      email                : req.body.email
     },
     infos_projet: {
-      project_type        : req.body.nom_representant,
-      project_description : req.body.prenom_representant,
-      deadline            : req.body.mail,
-      budget              : req.body.telephone
+      project_type        : req.body.project_type,
+      project_description : req.body.project_description,
+      deadline            : req.body.deadline,
+      budget              : req.body.budget
     }
   }).save(function(err){
-      if(!err) {
-          res.redirect('/ateliers');
-      } else {
-          console.log(err);
-          return response.send('ERROR');
-      }
+    if(err) {
+        console.log(err);
+        return response.send('ERROR');
+    }
   });
+  console.log('Save devis');
   transporter.sendMail({
     from: req.body.email,
     to: 'guerin.pierre26@gmail.com, ' + req.body.email,
     subject: 'Devis projet.',
-    text: req.body.message
+    text: req.body.nom + ' ' + req.body.prenom,
+    html: '<h1>Infos Personnelles</h1><br><b>Nom:</b> ' + req.body.nom + '<br>' + '<b>Prénom:</b> ' + req.body.prenom + '<br>' + '<b>Email:</b> ' + req.body.email + '<br><br>' + '<h1>Infos Projet</h1><br><b>Projet:</b> ' + req.body.project_type + '<br>' + '<b>Description:</b> ' + req.body.project_description + '<br>' + '<b>Date limite:</b> ' + req.body.deadline + '<br>' + '<b>Budget:</b> ' + req.body.budget
   });
-  console.log('Send contact');
+  console.log('Send devis');
   res.redirect('/');
 });
 
 app.get('/admin', function(req, res){
   Devis.find(function(err, devis) {
     res.render('admin', {devis : devis});
-    console.log(devis);
+    console.log('Admin');
   });
 });
 
