@@ -28,14 +28,10 @@ mongoose.connect('mongodb://localhost:27017/devis');
 mongoose.connection.on("error", function(){
   console.log("Erreur de connection à la base de données.")
 });
-mongoose.connection.on("connected", function(){
-  console.log("Connection en cours à la base de données.")
-});
 mongoose.connection.on("open", function(){
   console.log("Connection réussie à la base de données.")
 });
 
-console.log(mongoose.connection.readyState);
 
 
 // Routing
