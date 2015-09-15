@@ -7,7 +7,7 @@ var mongoose     = require('mongoose');
 
 var app          = express();
 var transporter  = nodemailer.createTransport();
-var port         = 3001;
+var port         = 3000;
 
 
 // Settings
@@ -76,7 +76,7 @@ app.post('/nouveau-projet', function(req,res){
   }).save(function(err){
     if(err) {
         console.log(err);
-        return response.send('ERROR');
+        res.redirect('/nouveau-projet');
     }
   });
   console.log('Save devis');
@@ -89,6 +89,21 @@ app.post('/nouveau-projet', function(req,res){
   });
   console.log('Send devis');
   res.redirect('/');
+});
+
+app.get('/projet/:id', function(req, res){
+  Devis.findById(req.params.id, function(err,devis){
+    res.render( 'projet', {
+      id                  : devis.id,
+      nom                 : devis.infos_perso.nom,
+      prenom              : devis.infos_perso.prenom,
+      email               : devis.infos_perso.email,
+      project_type        : devis.infos_projet.project_type,
+      project_description : devis.infos_projet.project_description,
+      deadline            : devis.infos_projet.deadline,
+      budget              : devis.infos_projet.budget
+    });
+  });
 });
 
 app.get('/admin', function(req, res){
